@@ -1,10 +1,9 @@
 <template>
   <button 
   v-if="isBtnReady"
-    class="btn btn-primary"
     @click="onMyLocationClicked"
     >
-    Ir a mi ubicación 🚀 
+    <img src="@/assets/location.svg" alt="my location" />
   </button>
 </template>
 
@@ -17,7 +16,7 @@ export default defineComponent({
     setup() {
 
         const { userLocation, isUserLocationReady } = usePlacesStore();
-        const { map, isMapReady } = useMapStore();
+        const { map } = useMapStore();
 
         return {
             isBtnReady: computed<boolean>(() => {
@@ -38,7 +37,26 @@ export default defineComponent({
 <style scoped>
 button {
     position: fixed;
-    top: 30px;
+    bottom: 30px;
     right: 30px;
+    border: none;
+    outline: none;
+    background-color: white;
+    transition: 0.3s ease-in-out;
+    border: 3px solid transparent;
+    display: grid;
+    place-content: center;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+button img {
+    width: 40px;
+    height: 40px;
+
+}
+
+button:hover {
+    border: 3px solid gray;
 }
 </style>

@@ -108,7 +108,12 @@ const mutation: MutationTree<MapState> = {
                 'line-width': 3
             }
         });
+    },
+
+    setTo( state, to: string ) {
+        state.to = to;
     }
+   
 }
 
 

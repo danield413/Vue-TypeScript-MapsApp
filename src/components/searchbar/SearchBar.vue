@@ -1,10 +1,10 @@
 
 
 <template>
+  <input type="text" placeholder="Buscar un lugar"
+  v-model="searchTerm">
+  
   <div class="searchbar-container">
-    <input type="text" class="form-control" placeholder="Buscar lugares..."
-      v-model="searchTerm">
-      
     <SearchResults />
     
   </div>
@@ -13,7 +13,7 @@
 <script lang="ts" src="./SearchBar.ts" />
 
 <style scoped>
-.searchbar-container {
+/* .searchbar-container {
   position: fixed;
   top: 30px;
   left: 30px;
@@ -25,6 +25,45 @@
   overflow: auto;
   padding: 5px;
   max-height: 60vh;
+} */
+
+.searchbar-container {
+  position: fixed;
+  top: 90px;
+  left: 30px;
+  width: 300px;
+  z-index: 99999;
+  /* border: 2px solid #272727; */
+  max-height: 55vh;
+  overflow: auto;
+  padding: 10px;
+}
+
+input {
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  width: 300px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: all 0.5s ease;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  border: 3px solid #ffffff;
+  color: #fefefe;
+  font-weight: bold;
+}
+
+input:focus {
+  border: 3px solid #00FF83;
+}
+
+input::placeholder {
+  color: white;
+  font-weight: light;
 }
 
 </style>

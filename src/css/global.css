@@ -1,0 +1,20 @@
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+/* customize the scroll bar using css */
+::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(148, 148, 148);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

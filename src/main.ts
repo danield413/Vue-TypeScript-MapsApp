@@ -2,6 +2,8 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import './css/global.css'
+import 'primeicons/primeicons.css';
 
 import mapboxgl from 'mapbox-gl'; // or "const mapboxgl = require('mapbox-gl');"
  
@@ -11,7 +13,7 @@ if(!navigator.geolocation) {
     throw new Error('Tu navegador no soporta geolocalización')
 }
 
-createApp(App)
-    .use(store)
-    .use(router)
-    .mount('#app')
+const app = createApp(App)
+app.use(store)
+app.use(router)
+app.mount('#app')
