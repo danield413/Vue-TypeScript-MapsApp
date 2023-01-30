@@ -1,8 +1,10 @@
 
 
 <template>
-  <input type="text" placeholder="Buscar un lugar"
+  <div class="container-input">
+    <input type="text" placeholder="Buscar un lugar"
   v-model="searchTerm">
+  </div>
   
   <div class="searchbar-container">
     <SearchResults />
@@ -64,6 +66,20 @@ input:focus {
 input::placeholder {
   color: white;
   font-weight: light;
+}
+
+@media screen and (max-width: 768px) {
+  .container-input {
+    background-color: red;
+    display: flex;
+    justify-content: center;
+  }
+
+  input {
+    top: 10px;
+    left: 10px;
+  }
+  
 }
 
 </style>

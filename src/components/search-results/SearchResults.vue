@@ -23,7 +23,7 @@
                 <button
                     :class="place.id === activePlace ? 'btn-light' : 'btn-dark'"
                     @click.self="getRouteDirections(place)">
-                    Ir al destino
+                    Ver direcciones
                     <img src="@/assets/arrow.svg" alt="">
                     <!-- <i class="pi pi-chevron-right"></i> -->
                 </button>
