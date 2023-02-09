@@ -1,18 +1,18 @@
 import { defineComponent, ref, onMounted, watch } from 'vue';
 import Mapboxgl from 'mapbox-gl';
 
-import { usePlacesStore } from '../../composables/usePlacesStore';
-import { useMapStore } from '../../composables/useMapStore';
+import { usePlacesStore } from '@/composables/usePlacesStore';
+import { useMapStore } from '@/composables/useMapStore';
 
 export default defineComponent({
     name: 'MapView',
     setup() {
-
-        const mapElement = ref<HTMLDivElement>()
+        
+        const mapElement = ref<HTMLDivElement>();
         const { userLocation, isUserLocationReady } = usePlacesStore();
         const { setMap } = useMapStore();
 
-        const initMap = async () => {
+        const initMap = async ()=> {
             if (!mapElement.value || !userLocation.value) {
                 throw new Error('No se puede inicializar el mapa');
             }
@@ -29,13 +29,13 @@ export default defineComponent({
 
             const myLocationPopup = new Mapboxgl.Popup({ offset: [ 0,-55 ]}).setLngLat(userLocation.value).setHTML('<h1>Estás aquí</h1>')
 
-            const myLocationMarker = new Mapboxgl.Marker({
+            new Mapboxgl.Marker({
                 color: '#00FF83',
                 draggable: false
                 
             }).setLngLat(userLocation.value).addTo(map).setPopup(myLocationPopup)
             
-            //todo establecer map vuex
+            //TODO: establecer map VueX
             setMap(map);
         }
 

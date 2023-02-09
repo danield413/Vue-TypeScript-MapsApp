@@ -82,4 +82,8 @@ input::placeholder {
   
 }
 
+h1 {
+  color: #fff;
+}
+
 </style>
